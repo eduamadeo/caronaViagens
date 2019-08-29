@@ -3,6 +3,7 @@ export interface Trip {
     origin?: string;
     destination?: string;
     date?: string;
+    time?: string;
     price?: string;
     createdAt?: number;
     userId?: string;
