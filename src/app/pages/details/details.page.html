@@ -4,34 +4,27 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
 
-    <ion-title>Produto</ion-title>
+    <ion-title>Viagem</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <ion-list>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="trip.origin" placeholder="Origem"></ion-input>
+      <label>Origem: </label>
+      {{ trip.origin }}
     </ion-item>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="trip.destination" placeholder="Destino"></ion-input>
+      {{ trip.destination }}
     </ion-item>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="trip.date" placeholder="Data"></ion-input>
+      {{ trip.date }}
     </ion-item>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="trip.time" placeholder="Horário"></ion-input>
+      {{ trip.time }}
     </ion-item>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="trip.price" placeholder="Preço"></ion-input>
+      {{ trip.price }}
     </ion-item>
   </ion-list>
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-button (click)="saveTrip()" expand="block">
-      Salvar viagem
-    </ion-button>
-  </ion-toolbar>
-</ion-footer>
