@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -17,20 +17,25 @@
       <ion-input type="text" [(ngModel)]="trip.destination" placeholder="Destino"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="trip.date" placeholder="Data"></ion-input>
+      <ion-input type="text" [(ngModel)]="trip.date" placeholder="Data" (click)="showDatePicker()" value={{date}}>
+      </ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="trip.time" placeholder="Horário"></ion-input>
+      <ion-input type="text" [(ngModel)]="trip.time" placeholder="Horário" (click)="showTimePicker()" value={{time}}>
+      </ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="trip.price" placeholder="Preço"></ion-input>
+      <ion-input type="number" [(ngModel)]="trip.price" placeholder="Preço"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" [(ngModel)]="trip.seats" placeholder="Vagas"></ion-input>
     </ion-item>
   </ion-list>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-button (click)="saveTrip()" expand="block">
+    <ion-button (click)="saveTrip()" color="tertiary" expand="block">
       Salvar viagem
     </ion-button>
   </ion-toolbar>

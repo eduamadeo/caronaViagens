@@ -49,15 +49,15 @@ export class LoginPage implements OnInit {
       let msg = "";
       switch (error.code) {
         case "auth/wrong-password":
-          msg= "Email or Password is wrong.";
+          msg= "Email ou senha inválido.";
           break;
 
         case "auth/user-not-found":
-          msg= 'User not found.';
+          msg= 'Usuário não encontrado';
           break;
 
         case "auth/invalid-email":
-          msg= 'Email or Password is wrong.';
+          msg= 'Email ou senha inválido.';
           break;
         }
 

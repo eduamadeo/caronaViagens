@@ -5,6 +5,7 @@ import { Trip } from 'src/app/interfaces/trip';
 import { NavController, LoadingController, ToastController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { Subscription } from 'rxjs';
+import { DatePicker } from '@ionic-native/date-picker/ngx';
 
 @Component({
   selector: 'app-edit-trip',
@@ -16,6 +17,8 @@ export class EditTripPage implements OnInit {
   public trip: Trip = {};
   private loading: any;
   private tripSubscription: Subscription;
+  public date;
+  public time;
 
   constructor(
     private tripService: TripService,
@@ -23,7 +26,8 @@ export class EditTripPage implements OnInit {
     private navCtrl: NavController,
     private loadingCtrl: LoadingController,
     private authService: AuthService,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    private datePicker: DatePicker
   ) {
     this.tripId = this.activatedRoute.snapshot.params['id'];
 
@@ -44,6 +48,27 @@ export class EditTripPage implements OnInit {
     });
   }
  
+  showDatePicker() {
+    this.datePicker.show({
+      date: new Date(),
+      mode: 'date',
+      androidTheme: this.datePicker.ANDROID_THEMES.THEME_DEVICE_DEFAULT_LIGHT
+    }).then(
+      date => this.date = date,
+      err => console.log('Error occurred while getting date: ', err)
+    );
+  }
+
+  showTimePicker() {
+    this.datePicker.show({
+      date: new Date(),
+      mode: 'time',
+      androidTheme: this.datePicker.ANDROID_THEMES.THEME_DEVICE_DEFAULT_LIGHT
+    }).then(
+      date => this.time = date,
+      err => console.log('Error occurred while getting date: ', err)
+    );
+  }
  
   async saveTrip() {
     await this.presentLoading();

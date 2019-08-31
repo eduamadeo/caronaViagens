@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="tertiary">
     <ion-title>Minhas Viagens</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -28,13 +28,18 @@
     <ion-item-sliding *ngFor="let trip of mytrips">
       <ion-item button [routerLink]="['/edit-trip', trip.id]" *ngIf="trip.userId == authService.getAuth().currentUser.uid">
 
-        <ion-label>
+        <ion-label class="first-label">
           {{ trip.origin }}
           <p>{{ trip.destination }}</p>
-          <p>{{ trip.createdAt | date: 'short' }}</p>
+          <p>{{ trip.date | date: 'dd/MM/y' }}, {{ trip.time | date: 'shortTime' }}</p>
         </ion-label>
 
-        <ion-note color="primary" slot="end" *ngIf="trip.price">{{ trip.price | currency: 'BRL' }}</ion-note>
+        <ion-label text-center>
+            Vagas
+            <p>{{ trip.seats }}</p>
+          </ion-label>
+
+        <ion-note color="primary" slot="end" color="tertiary" *ngIf="trip.price">{{ trip.price | currency: 'BRL' }}</ion-note>
       </ion-item>
 
       <ion-item-options side="end">
@@ -52,7 +57,7 @@
     <ion-grid>
       <ion-row>
         <ion-col size="12">
-          <ion-button routerLink="/edit-trip" expand="block">
+          <ion-button routerLink="/edit-trip" color="tertiary" expand="block">
             Nova viagem
           </ion-button>
         </ion-col>

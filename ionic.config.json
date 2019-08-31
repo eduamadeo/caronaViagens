@@ -1,5 +1,7 @@
 {
   "name": "caronaViagens",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

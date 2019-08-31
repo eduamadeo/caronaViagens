@@ -1,7 +1,6 @@
-
 <ion-content class="swiper-no-swiping">
   <div class="container top">
-    <ion-segment (ionChange)="segmentChanged($event)" value="javascript">
+    <ion-segment (ionChange)="segmentChanged($event)" value="javascript" color="tertiary">
       <ion-segment-button value="login">
         <ion-label>Login</ion-label>
       </ion-segment-button>
@@ -10,50 +9,54 @@
       </ion-segment-button>
     </ion-segment>
     <ion-slides>
-    <ion-slide>
-      <div class="slide-inner ion-padding">
-        <span>Login</span>
+      <ion-slide>
+        <div class="slide-inner ion-padding">
+          <h2>Carona Viagens</h2>
 
-        <div class="errorMessage" [innerHtml]="errorMessage"></div>
-        <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="email" placeholder="E-mail" [(ngModel)]="userLogin.email"></ion-input>
-        </ion-item>
+          <span>Login</span>
 
-        <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="password" placeholder="Senha" [(ngModel)]="userLogin.password"></ion-input>
-        </ion-item>
+          <div class="errorMessage" [innerHtml]="errorMessage"></div>
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-input type="email" placeholder="E-mail" [(ngModel)]="userLogin.email"></ion-input>
+          </ion-item>
 
-        <ion-button class="ion-margin-top" (click)="login()" color="light" expand="block">
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-input type="password" placeholder="Senha" [(ngModel)]="userLogin.password"></ion-input>
+          </ion-item>
+
+          <ion-button class="ion-margin-top" (click)="login()" color="tertiary" expand="block">
             Entrar
-        </ion-button>
-      </div>
-    </ion-slide>
+          </ion-button>
+        </div>
+      </ion-slide>
 
-    <ion-slide>
-      <div class="slide-inner ion-padding">
-        <span>Cadastro</span>
+      <ion-slide>
+        <div class="slide-inner ion-padding">
+          <h2>Carona Viagens</h2>
 
-        <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="text" placeholder="Nome" [(ngModel)]="userDetailsRegister.name"></ion-input>
-        </ion-item>
+          <span>Cadastro</span>
 
-        <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="text" placeholder="Telefone" [(ngModel)]="userDetailsRegister.phone"></ion-input>
-        </ion-item>
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-input type="text" placeholder="Nome" [(ngModel)]="userDetailsRegister.name"></ion-input>
+          </ion-item>
 
-        <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="email" placeholder="E-mail" [(ngModel)]="userRegister.email"></ion-input>
-        </ion-item>
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-input type="tel" placeholder="Telefone" [(ngModel)]="userDetailsRegister.phone"></ion-input>
+          </ion-item>
 
-        <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="password" placeholder="Senha" [(ngModel)]="userRegister.password"></ion-input>
-        </ion-item>
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-input type="email" placeholder="E-mail" [(ngModel)]="userRegister.email"></ion-input>
+          </ion-item>
 
-        <ion-button class="ion-margin-top" (click)="register()" color="light" expand="block">
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-input type="password" placeholder="Senha" [(ngModel)]="userRegister.password"></ion-input>
+          </ion-item>
+
+          <ion-button class="ion-margin-top" (click)="register()" color="tertiary" expand="block">
             Cadastrar
-        </ion-button>
-      </div>
-    </ion-slide>
-  </ion-slides>
+          </ion-button>
+        </div>
+      </ion-slide>
+    </ion-slides>
   </div>
 </ion-content>

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -11,20 +11,44 @@
 <ion-content class="ion-padding">
   <ion-list>
     <ion-item>
-      <label>Origem: </label>
-      {{ trip.origin }}
+      <ion-label>Origem
+        <p>{{ trip.origin }}</p>
+      </ion-label>
     </ion-item>
     <ion-item>
-      {{ trip.destination }}
+      <ion-label>Destino
+        <p>{{ trip.destination }}</p>
+      </ion-label>
     </ion-item>
     <ion-item>
-      {{ trip.date }}
+      <ion-label>Data
+        <p>{{ trip.date | date: 'dd/MM/y' }}</p>
+      </ion-label>
     </ion-item>
     <ion-item>
-      {{ trip.time }}
+      <ion-label>Horário
+        <p>{{ trip.time | date: 'shortTime' }}</p>
+      </ion-label>
     </ion-item>
     <ion-item>
-      {{ trip.price }}
+      <ion-label>Preço
+        <p>{{ trip.price | currency: 'BRL' }}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>Vagas
+          <p>{{ trip.seats }}</p>
+        </ion-label>
+      </ion-item>
+    <ion-item>
+      <ion-label>Nome motorista
+        <p>{{ userDetails.name }}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Telefone motorista
+        <p>{{ userDetails.phone }}</p>
+      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>
